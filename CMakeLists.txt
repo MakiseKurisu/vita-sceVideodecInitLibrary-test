@@ -37,9 +37,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 
 # Add any additional include paths here
-include_directories(
-  ../common # This is for debugScreenPrintf(), you shouldn't need it in your projects
-)
+# include_directories()
 
 # Add any additional library paths here
 # ${CMAKE_CURRENT_BINARY_DIR} lets you use any library currently being built
@@ -51,7 +49,7 @@ link_directories(
 # Add all the files needed to compile here
 add_executable(${PROJECT_NAME}
   src/main.c
-  ../common/debugScreen.c
+  src/debugScreen.c
 )
 
 # Library to link to (drop the -l prefix). This will mostly be stubs.
