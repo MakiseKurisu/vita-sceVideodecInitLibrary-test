@@ -14,9 +14,7 @@ int main(int argc, char *argv[]) {
 	if (log == NULL)
 	{
 		printf("Failed to open log file.\n");
-		sceKernelDelayThread(3*1000000);
-
-		sceKernelExitProcess(0);
+		while (1) sceKernelDelayThread(60*1000000);
 		return 1;
 	}
 
@@ -41,11 +39,10 @@ int main(int argc, char *argv[]) {
     			if (sceVideodecTermLibrary(SCE_VIDEODEC_TYPE_HW_AVCDEC) < 0)
 				{
 					fflush(log);
+					fclose(log);
 
 					printf("Cannot release decoder.\n");
-					sceKernelDelayThread(3*1000000);
-
-					sceKernelExitProcess(0);
+					while (1) sceKernelDelayThread(60*1000000);
 					return 2;
 				}
 			}
@@ -56,8 +53,6 @@ int main(int argc, char *argv[]) {
 	fclose(log);
 
 	printf("Test completed.\n");
-	sceKernelDelayThread(3*1000000); // Wait for 3 seconds
-
-	sceKernelExitProcess(0);
+	while (1) sceKernelDelayThread(60*1000000);
 	return 0;
 }
