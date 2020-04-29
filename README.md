@@ -1,2 +1,5 @@
 # vita-sceVideodecInitLibrary-test
-https://github.com/xyzz/vita-moonlight/blob/9f2769236dc88fda35f720c92c4aa061dc576fea/src/video/vita.c#L248
+
+Test every resolution from 1x1 to 2560x2560 for sceVideodecInitLibrary.
+
+PSV 1000's supported resolutions are listed in sceVideodecInitLibrary.log.
